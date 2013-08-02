@@ -40,18 +40,21 @@ public class Reader {
 	
 	public void writeOutput() {
 		try {
-			PrintWriter writer = new PrintWriter("output.txt");
+			PrintWriter writer = new PrintWriter("outpu1t.txt");
 			for (int i = 0; i < entriesList.size(); i++) {
 				writer.println(entriesList.get(i));
 			}
+			writer.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		}
+		
 	}
 
 	public static void main(String[] args) {
-		Reader one = new Reader("exampleCSV.txt");
+		Reader one = new Reader("exampleCSV.csv");
 		one.printEntriesList();
+		one.writeOutput();
 	}
 
 }
